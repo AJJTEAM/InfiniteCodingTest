@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-using InfinitePeopleApi.Models;
-using InfinitePeopleApi.Services;
+﻿using InfinitePeopleApi.Services;
 using Microsoft.AspNetCore.Mvc;
 
 namespace InfinitePeopleApi.Controllers
@@ -15,6 +13,6 @@ namespace InfinitePeopleApi.Controllers
             _personService = personService;
         }
         [HttpGet]
-        public ActionResult<IEnumerable<People>> Get() => new OkObjectResult(_personService.Get());
+        public IActionResult Get() => Ok(_personService.Get());
     }
 }

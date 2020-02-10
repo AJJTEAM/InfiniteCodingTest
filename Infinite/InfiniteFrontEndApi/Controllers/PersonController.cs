@@ -15,6 +15,6 @@ namespace InfiniteFrontEndApi.Controllers
             _personService = personService;
         }
         [HttpGet]
-        public async Task<ActionResult> Get() => new OkObjectResult(await _personService.GetAsync());
+        public async Task<IActionResult> Get() => Ok(await _personService.GetAsync());
     }
 }
